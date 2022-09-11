@@ -140,7 +140,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[PestPHP](https://pestphp.com/)**
 -   **[Swagger](https://laravel.com/)**
 
-> Veja o arquivo  [composer.json](https://github.com/rbosco/employee-management/composer.json)
+> Veja o arquivo  [composer.json](https://github.com/rbosco/employee-management/blob/main/composer.json)
 
 #### **Utilitários** <a name="utilitarios"></a>
 
