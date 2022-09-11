@@ -67,7 +67,7 @@ Acesse o Swagger para ver a documentação das API's da mEmployee.
 </a>
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="Screenshot swagger 1" src="./readme/swagger.png" width="400px">
+  <img alt="Screenshot swagger 1" src="./readme/swagger.png" width="800px">
 </p>
 
 ---
