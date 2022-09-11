@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Http\Requests\EmployeeRequest;
+use App\Http\Requests\EmployeeUpdateRequest;
 use App\Http\Resources\EmployeeCollection;
 use App\Http\Resources\EmployeeResource;
 use App\Interfaces\EmployeeRepositoryInterface;
@@ -16,10 +17,12 @@ class EmployeeService {
     public function __construct(
         private EmployeeRepositoryInterface $employeeRepository,
         private EmployeeRequest $employeeRequest,
+        private EmployeeUpdateRequest $employeeUpdateRequest
     )
     {
         $this->employeeRepository = $employeeRepository;
         $this->employeeRequest = $employeeRequest;
+        $this->employeeUpdateRequest = $employeeUpdateRequest;
     }
 
     public function getAllEmployees()
@@ -57,7 +60,7 @@ class EmployeeService {
 
     public function updateEmployee($request, $employee): JsonResponse
     {
-        if ($this->validateForm($request->all(), $this->employeeRequest->rules()) == true) {
+        if ($this->validateForm($request->all(), $this->employeeUpdateRequest->rules()) == true) {
             
             $this->employeeRepository->updateEmployee($employee->id, $request->all());
             $employee = $this->employeeRepository->getEmployeeByIdOrCpf($employee->id);

@@ -23,7 +23,7 @@ class EmployeeSalaryRequest
     {
         return [
             'employee_id' => 'required|integer',
-            'salary' => 'required|between:0,999999.99',
+            'salary' => 'required|numeric',
         ];
     }
 }

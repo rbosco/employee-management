@@ -45,7 +45,7 @@ class EmployeeController extends ApiController
      *     @OA\Parameter(
      *         name="employee",
      *         in="path",
-     *         description="ID Employee",
+     *         description="Identificador ou CPF do Colaborador",
      *         required=true,
      *         @OA\Schema(
      *              type="integer",
@@ -69,118 +69,48 @@ class EmployeeController extends ApiController
      *     summary="Cadastra colaborador",
      *     description="Cadastra colaborador",
      *     path="/api/v1/employee",
-     *     @OA\Parameter(
-     *         name="fullname",
-     *         in="query",
-     *         description="Nome completo do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="birthdata",
-     *         in="query",
-     *         description="Data de nascimento do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="date",
-     *              format="date",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="cpf",
-     *         in="query",
-     *         description="CPF do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="rg",
-     *         in="query",
-     *         description="RG do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="email",
-     *         in="query",
-     *         description="Email do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address",
-     *         in="query",
-     *         description="Endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_cep",
-     *         in="query",
-     *         description="CEP de endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_number",
-     *         in="query",
-     *         description="Número de endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_city",
-     *         in="query",
-     *         description="Cidade do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_state",
-     *         in="query",
-     *         description="Estado do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
+     *     @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              example={
+     *                  "fullname": "",
+     *                  "birthdata": "YYYY-MM-DD",
+     *                  "cpf": "",
+     *                  "rg": "",
+     *                  "email": "",
+     *                  "address": "",
+     *                  "address_cep": "",
+     *                  "address_number": "",
+     *                  "address_city": "",
+     *                  "address_state": "",
+     *              },
+     *              @OA\Schema (
+     *                  type="object",
+     *                  @OA\Property(property="fullname", required=true, description="Nome completo", type="string"),
+     *                  @OA\Property(property="birthdata", required=true, description="Data de nascimento", type="string"),
+     *                  @OA\Property(property="cpf", required=true, description="RG do colaborador", type="string"),
+     *                  @OA\Property(property="rg", required=true, description="RG do colaborador", type="string"),
+     *                  @OA\Property(property="email", required=true, description="E-mail do colaborador", type="string"),
+     *                  @OA\Property(property="address", required=true, description="Endereço do colaborador", type="string"),
+     *                  @OA\Property(property="address_cep", required=true, description="CEP do colaborador", type="string"),
+     *                  @OA\Property(property="address_number", required=true, description="Número da residência do colaborador", type="string"),
+     *                  @OA\Property(property="address_city", required=true, description="Cidade do colaborador", type="string"),
+     *                  @OA\Property(property="address_state", required=true, description="Estado do colaborador", type="string"),
+     *             )
+     *          )
      *     ),
      *     @OA\Response(response="200", description="Colaborador Salvo com Sucesso"),
      *     @OA\Response(response="422", description="Atributos não podem ser processados"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * ),
      *
-    */
+     */
     public function store(Request $request): JsonResponse
     {
         return $this->employeeService->addEmployee($request);
     }
 
-   /**
+    /**
      * @OA\Put(
      *     tags={"Employee"},
      *     summary="Edita um colaborador",
@@ -196,107 +126,37 @@ class EmployeeController extends ApiController
      *              format="int64",
      *         ),
      *     ),
-     *     @OA\Parameter(
-     *         name="fullname",
-     *         in="query",
-     *         description="Nome completo do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
+     *     @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              example={
+     *                  "fullname": "",
+     *                  "birthdata": "YYYY-MM-DD",
+     *                  "cpf": "",
+     *                  "rg": "",
+     *                  "email": "",
+     *                  "address": "",
+     *                  "address_cep": "",
+     *                  "address_number": "",
+     *                  "address_city": "",
+     *                  "address_state": "",
+     *              },
+     *              @OA\Schema (
+     *                  type="object",
+     *                  @OA\Property(property="fullname", required=true, description="Nome completo", type="string"),
+     *                  @OA\Property(property="birthdata", required=true, description="Data de nascimento", type="string"),
+     *                  @OA\Property(property="cpf", required=true, description="RG do colaborador", type="string"),
+     *                  @OA\Property(property="rg", required=true, description="RG do colaborador", type="string"),
+     *                  @OA\Property(property="email", required=true, description="E-mail do colaborador", type="string"),
+     *                  @OA\Property(property="address", required=true, description="Endereço do colaborador", type="string"),
+     *                  @OA\Property(property="address_cep", required=true, description="CEP do colaborador", type="string"),
+     *                  @OA\Property(property="address_number", required=true, description="Número da residência do colaborador", type="string"),
+     *                  @OA\Property(property="address_city", required=true, description="Cidade do colaborador", type="string"),
+     *                  @OA\Property(property="address_state", required=true, description="Estado do colaborador", type="string"),
+     *             )
+     *          )
      *     ),
-     *     @OA\Parameter(
-     *         name="birthdata",
-     *         in="query",
-     *         description="Data de nascimento do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="date",
-     *              format="date",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="cpf",
-     *         in="query",
-     *         description="CPF do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="rg",
-     *         in="query",
-     *         description="RG do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="email",
-     *         in="query",
-     *         description="Email do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address",
-     *         in="query",
-     *         description="Endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_cep",
-     *         in="query",
-     *         description="CEP de endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_number",
-     *         in="query",
-     *         description="Número de endereço do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_city",
-     *         in="query",
-     *         description="Cidade do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="address_state",
-     *         in="query",
-     *         description="Estado do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="string",
-     *              format="str",
-     *          ),
-     *     ),
-     *     @OA\Response(response="200", description="Colaborador Salvo com Sucesso"),
+     *     @OA\Response(response="200", description="Colaborador atualizado com Sucesso"),
      *     @OA\Response(response="422", description="Atributos não podem ser processados"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * ),

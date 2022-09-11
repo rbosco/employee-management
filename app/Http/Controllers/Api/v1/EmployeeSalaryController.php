@@ -28,32 +28,25 @@ class EmployeeSalaryController extends ApiController
      *     summary="Cadastra salário",
      *     description="Cadastra salário de um colaborador",
      *     path="/api/v1/employeesalary",
-     *     @OA\Parameter(
-     *         name="id_employee",
-     *         in="query",
-     *         description="Identificador do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="integer",
-     *              format="int64",
-     *          ),
-     *     ),
-     *     @OA\Parameter(
-     *         name="salary",
-     *         in="query",
-     *         description="Salário do colaborador",
-     *         required=true,
-     *         @OA\Schema(
-     *              type="float",
-     *              format="flt",
-     *          ),
+     *     @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *              example={
+     *                  "employee_id": "",
+     *                  "salary": "",
+     *              },
+     *              @OA\Schema (
+     *                  type="object",
+     *                  @OA\Property(property="employee_id", required=true, description="ID do colaborador", type="integer"),
+     *                  @OA\Property(property="salary", required=true, description="Salário", type="number")
+     *             )
+     *          )
      *     ),
      *     @OA\Response(response="200", description="Salário do colaborador salvo com sucesso"),
      *     @OA\Response(response="422", description="Atributos não podem ser processados"),
-     *     @OA\Response(response="500", description="Erro interno do servidor")
+     *     @OA\Response(response="500", description="Erro interno do servidor"),
      * ),
-     *
-    */
+     */
     public function store(Request $request): JsonResponse
     {
         return $this->employeeSalaryService->addEmployeeSalary($request);
