@@ -1,6 +1,6 @@
 <h1 align="center">
     <p align="center">
-      <img alt="logo" src="./readme/logo.jpg" width="400px">
+      <img alt="logo" src="./readme/logo.png" width="400px">
     </p>
     ⚙️ <a href="#" alt=""> mEmployee </a>
 </h1>
@@ -109,7 +109,7 @@ $ php artisan migrate --seeds
 ```
 
 <p align="center">
-  <a href="https://github.com/rbosco/employee-management/Insomnia_API_mEmployee.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+  <a href="https://github.com/rbosco/employee-management/blob/main/Insomnia_API_mEmployee.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
 #### 🎲 Rodando os testes <a name="rodando-testes"></a>
