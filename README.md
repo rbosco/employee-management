@@ -104,14 +104,11 @@ $ cd ..
 # Instale as dependências
 $ composer install
 
-# Execute a aplicação em modo de desenvolvimento
-$ php artisan serve --port=8080
-
-# Faça um reset nas migrations para garantir que o banco esteja vazio
-$ php artisan migrate:reset
-
 # Execute as migrations e seeds para criar as tabelas e popular o banco
 $ php artisan migrate --seed
+
+# Execute a aplicação em modo de desenvolvimento
+$ php artisan serve --port=8080
 
 # O servidor inciará na porta:8080 - acesse http://127.0.0.1:8080 
 
