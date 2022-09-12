@@ -138,6 +138,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[Laravel](https://laravel.com/)**
 -   **[Sqlite](https://www.sqlite.org/index.html)**
 -   **[PestPHP](https://pestphp.com/)**
+-   **[PHPUnit](https://phpunit.de/)**
 -   **[Swagger](https://laravel.com/)**
 
 > Veja o arquivo  [composer.json](https://github.com/rbosco/employee-management/blob/main/composer.json)
