@@ -28,7 +28,7 @@ class EmployeeService {
     public function getAllEmployees()
     {
         $employee = $this->employeeRepository->getAllEmployees();
-  
+ 
         return new EmployeeCollection($employee);
     }
 
@@ -47,7 +47,7 @@ class EmployeeService {
     }
 
     public function addEmployee($request): JsonResponse
-    {
+    {   
         if ($this->validateForm($request->all(), $this->employeeRequest->rules()) == true) {
 
             $employee = $this->employeeRepository->addEmployee($request->all());

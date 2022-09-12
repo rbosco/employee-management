@@ -6,7 +6,7 @@
 </h1>
 
 <h3 align="center">
-    ⚙️ Gerencie seus colaboradores de forma fácil integrando com a mEmployee. 👨‍💼
+    ⚙️ Gerencie os colaboradores da sua empresa integrando com a mEmployee. 👨‍💼
 </h3>
 
 <p align="center">
