@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Unit;
 
 use App\Http\Requests\EmployeeRequest;
 use App\Http\Requests\EmployeeSalaryRequest;

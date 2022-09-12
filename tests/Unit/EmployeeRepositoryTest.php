@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Unit;
 
 use App\Interfaces\EmployeeRepositoryInterface;
 use PHPUnit\Framework\TestCase;

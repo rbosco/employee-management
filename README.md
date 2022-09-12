@@ -92,6 +92,12 @@ $ git clone https://github.com/rbosco/employee-management.git
 # Acesse a pasta do projeto no terminal/cmd
 $ cd employee-management
 
+# Acesse a pasta database
+$ cd database
+
+# Crie um banco sqlite
+$ touch database.sqlite
+
 # Instale as dependências
 $ composer install
 
