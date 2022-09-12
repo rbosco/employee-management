@@ -98,6 +98,9 @@ $ cd database
 # Crie um banco sqlite
 $ touch database.sqlite
 
+# Retorne para a pasta raiz do projeto
+$ cd ..
+
 # Instale as dependências
 $ composer install
 
