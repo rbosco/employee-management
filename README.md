@@ -111,7 +111,7 @@ $ php artisan serve --port=8080
 $ php artisan migrate:reset
 
 # Execute as migrations e seeds para criar as tabelas e popular o banco
-$ php artisan migrate --seeds
+$ php artisan migrate --seed
 
 # O servidor inciará na porta:8080 - acesse http://127.0.0.1:8080 
 
